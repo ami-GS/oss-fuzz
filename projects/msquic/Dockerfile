@@ -30,7 +30,7 @@ ADD https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-$
 RUN tar xvf cmake.tar.gz -C /usr/local --strip 1 \
     && rm cmake.tar.gz
 
-RUN git clone https://github.com/microsoft/msquic && \
+RUN git clone https://github.com/ami-GS/msquic && \
     cd msquic && \
     git submodule init submodules/clog && \
     git submodule init submodules/openssl && \

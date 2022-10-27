@@ -15,7 +15,9 @@
 #
 ################################################################################
 
-pwsh ./scripts/build.ps1 -Static -DisableTest -DisablePerf -DisableLogs -Parallel 1
+git checkout dev/daiki/fuzz_debug
+
+pwsh ./scripts/build.ps1 -Static -DisableTest -DisablePerf -DisableLogs -Parallel 12
 
 cd $SRC/msquic/src/fuzzing
 
