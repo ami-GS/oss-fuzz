@@ -15,7 +15,9 @@
 #
 ################################################################################
 
+git fetch
 git checkout dev/daiki/fuzz_debug
+git pull
 
 pwsh ./scripts/build.ps1 -Static -DisableTest -DisablePerf -DisableLogs -Parallel 12
 
