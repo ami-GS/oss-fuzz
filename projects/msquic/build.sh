@@ -38,7 +38,7 @@ $CXX $CXXFLAGS $LIB_FUZZING_ENGINE fuzz.o -o $OUT/fuzz \
 
 cd $SRC
 
-$CXX $CXXFLAGS -DCX_PLATFORM_LINUX -DQUIC_TEST_APIS -DFUZZING -DQUIC_BUILD_STATIC \
+$CXX $CXXFLAGS -DCX_PLATFORM_LINUX -DQUIC_TEST_APIS -DFUZZING -DQUIC_BUILD_STATIC -O0 -g3 \
     -I/src/msquic/src/test \
     -I/src/msquic/src/inc \
     -I/src/msquic/src/generated/common \
@@ -48,5 +48,5 @@ $CXX $CXXFLAGS -DCX_PLATFORM_LINUX -DQUIC_TEST_APIS -DFUZZING -DQUIC_BUILD_STATI
     -isystem /src/msquic/submodules/googletest/googletest \
     -c ./msquic/src/tools/spin/spinquic.cpp -o spinquic.o
 
-$CXX $CXXFLAGS $LIB_FUZZING_ENGINE spinquic.o -o $OUT/spinquic \
+$CXX $CXXFLAGS $LIB_FUZZING_ENGINE spinquic.o -O0 -g3 -o $OUT/spinquic \
     /src/msquic/artifacts/bin/linux/x64_Debug_openssl/libmsquic.a
